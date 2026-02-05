@@ -1,0 +1,272 @@
+.navigation{
+    position: fixed;
+    inset: 20px;
+    background: #287bff;
+    width: 80px;
+    border-left: 10px solid #287bff;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 15px 15px 15px rgba(0,0,0,0.05);
+    transition: 0.5s;
+}
+.navigation.active{
+    width: 300px;
+    border-radius: 20px;
+}
+.toggle{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+    background-color: white;
+    border-radius:50% ;
+    box-shadow: 15px 15px 15px rgba(0,0,0,0.05);
+    cursor: pointer;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.toggle::before{
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 3px;  
+    border-radius: 3px;
+    background: #365fa1;
+    transform: translateY(-5px);
+    transition: 1s;
+}
+.toggle::after{
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: #365fa1;
+    transform: translateY(5px);
+    transition: 1s;
+}
+.navigation.active .toggle::before{
+    transform: translateY(0px) rotate(-405deg) ;
+}
+
+.navigation.active .toggle::after{
+    transform: translateY(0px) rotate(225deg) ;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+.navigation ul li:hover{
+    width: 100%;
+
+}
+.navigation ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    color: white;
+    display: flex;
+    text-decoration: none;
+}
+.navigation ul li a:hover{
+    color: #365fa1;
+}
+.navigation ul li:hover:not(:first-child) a
+{color: #365fa1;}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 1.75em;
+    margin-left: -60px;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #23232a;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* SWIPER */
+
+
+
+
+.title h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.2rem;
+  font-size: 1.3rem;
+}
+
+.title h2 {
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+  opacity: 0.3;
+  font-size: 1.1rem;
+}
+
+.content p {
+  line-height: 1.5;
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+.white-point {
+  display: inline-flex;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/* PARTICLES */
+
+.particles {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  padding: 0 10px;
+  z-index: 1;
+}
+
+.particles li {
+  position: relative;
+  bottom: 30px;
+  width: 30px;
+  height: 30px;
+  background: #7edd90;
+  box-shadow: 0 0 0 10px #7edd9044, 0 0 50px #7edd90, -100px 0 #475c9a99,
+    100px 0 #475c9a99;
+  margin: 0 4px;
+  border-radius: 50%;
+  animation: particles-animation calc(190s / var(--i)) ease infinite;
+}
+
+.particles li:nth-child(2n) {
+  background: #475c9a;
+  box-shadow: 0 0 0 10px #475c9a44, 0 0 50px #475c9a, -100px 0 #7edd9099,
+    100px 0 #7edd9099;
+}
+
+.particles li:nth-child(3n) {
+  background: #9a4772;
+  box-shadow: 0 0 0 10px #9a477244, 0 0 50px #9a4772, -100px 0 #7edd9099,
+    100px 0 #7edd9099;
+}
+
+@keyframes particles-animation {
+  0% {
+    transform: translateY(120vh) scale(0) rotate(180deg);
+  }
+
+  20% {
+    transform: translateY(100vh) scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-120vh) scale(0.5) rotate(360deg);
+  }
+}
+
+@media (max-width: 800px) {
+  .swiper {
+    max-width: 650px;
+    aspect-ratio: 5/4;
+  }
+}
+
+
+h1 {
+    text-align: center; /* Center the title */
+    color: #333; /* Darker text color */
+    margin-bottom: 20px; /* Space below the title */
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    display: flex; /* Use flexbox for alignment */
+    flex-wrap: wrap; 
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* Bold labels */
+    color: #555; /* Darker label color */
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+  }
+
+  input:focus, select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+  }
+
+  button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+
+  button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
